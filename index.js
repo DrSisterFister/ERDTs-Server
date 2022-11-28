@@ -6,6 +6,6 @@ const port = new SerialPort({
     baudRate: 9600
 })
 
-const parser = port.pip(new ByteLengthParser({length: 8}))
+const parser = port.pipe(new ByteLengthParser({length: 8}))
 
 parser.on('data', console.log)
